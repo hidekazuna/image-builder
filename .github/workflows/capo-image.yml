@@ -17,7 +17,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install packages
       run: sudo apt update && sudo apt install qemu-kvm libvirt-bin qemu-utils    
-    - name: Install prerequisites
-      run: cd images/capi && make deps-qemu
     - name: Build images
-      run: make build-qemu-ubuntu-1804
+      run: cd images/capi && make build-qemu-ubuntu-1804
