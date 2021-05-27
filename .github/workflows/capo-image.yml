@@ -1,6 +1,8 @@
 name: CAPO image build
 
 on:
+  schedule:
+    - cron: '30 * * * *'
   push:
     branches: [ master ]
   pull_request:
@@ -14,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install packages
-      run: apt install qemu-kvm libvirt-bin qemu-utils    
+      run: sudo apt install qemu-kvm libvirt-bin qemu-utils    
     - name: Install prerequisites
       run: cd image-builder/images/capi && make deps-qemu
     - name: Build images
