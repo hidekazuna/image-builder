@@ -18,6 +18,6 @@ jobs:
     - name: Install packages
       run: sudo apt update && sudo apt install qemu-kvm libvirt-bin qemu-utils    
     - name: Install prerequisites
-      run: cd image-builder/images/capi && make deps-qemu
+      run: ls -l
     - name: Build images
       run: make build-qemu-ubuntu-1804
